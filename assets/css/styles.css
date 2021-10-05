@@ -296,7 +296,7 @@ body {
 
 .hero-text {
 	text-align: center;
-	font-size: 4.5rem;
+	font-size: 3.5rem;
 	margin-top: 15px;
 }
 
@@ -410,7 +410,7 @@ and (max-height : 600px){
 	}
     /* Styles */
 
-	.iphonemcokup{
+	.welcome{
 	    margin-top: 40vh!important;
 		width:80vw;
 		transition: all;
