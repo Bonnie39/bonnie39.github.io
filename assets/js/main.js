@@ -8,7 +8,7 @@ $(document).ready(function() {
     if($.cookie("ody-theme") == 2){
     
     
-        $(".hero-jumbo").css({background:'linear-gradient(242deg, #b3d744, #1aac40) 0% 0% / 200% '});
+        $(".hero-jumbo").css({background:'linear-gradient(242deg, #dbddd7, #cf436b, #1f1828) 0% 0% / 200% '});
         $(".hero-jumbo").css({animation:'9s ease 0s infinite normal none running AnimationName'});
     }
     
@@ -35,11 +35,11 @@ $(document).ready(function() {
     
      });
     
-     $("#bodil").on('click',function(){
+     $("#cottoncandy").on('click',function(){
     
         $.cookie("ody-theme", 2);
     
-        $(".hero-jumbo").css({background:'linear-gradient(242deg, #b3d744, #1aac40) 0% 0% / 200% '});
+        $(".hero-jumbo").css({background:'linear-gradient(242deg, #dbddd7, #cf436b, #1f1828) 0% 0% / 200% '});
         $(".hero-jumbo").css({animation:'9s ease 0s infinite normal none running AnimationName'});
      });
     
