@@ -388,6 +388,16 @@ body {
 	border-color: #0190c8;
 }
 
+.btn-instagram {
+	background-color: #e63a5c;
+	border-color: #e63a5c;
+}
+
+.btn-instagram:hover {
+	background-color: #b12c46;
+	border-color: #b12c46;
+}
+
 .btn-download .icon {
 	margin-right: 0.2em;
 }
