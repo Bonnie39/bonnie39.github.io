@@ -1,0 +1,41 @@
+{
+    "name": "App",
+    "icons": [
+      {
+        "src": "/icon.webp",
+        "sizes": "36x36",
+        "type": "image/webp",
+        "density": "0.75"
+      },
+      {
+        "src": "/icon.webp",
+        "sizes": "48x48",
+        "type": "image/webp",
+        "density": "1.0"
+      },
+      {
+        "src": "/icon.webp",
+        "sizes": "72x72",
+        "type": "image/webp",
+        "density": "1.5"
+      },
+      {
+        "src": "/icon.webp",
+        "sizes": "96x96",
+        "type": "image/webp",
+        "density": "2.0"
+      },
+      {
+        "src": "/icon.webp",
+        "sizes": "144x144",
+        "type": "image/webp",
+        "density": "3.0"
+      },
+      {
+        "src": "/icon.webp",
+        "sizes": "192x192",
+        "type": "image/webp",
+        "density": "4.0"
+      }
+    ]
+  }
