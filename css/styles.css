@@ -1,0 +1,314 @@
+html, body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  }
+
+body {
+  background-color: black;
+  color: white;
+  font-family: "Chivo Mono", sans-serif;
+}
+
+body h1 {
+  font-family: "Chivo Mono", sans-serif;
+}
+
+body p {
+  font-family: "DM Mono", monospace;
+  font-weight: 300;
+}
+
+.centered-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index: 1;
+}
+
+.centered-navbar .nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ul-centered {
+  list-style-type: none;
+  overflow: hidden;
+  background-color: #382c40;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+	-webkit-backdrop-filter: saturate(180%) blur(15px);
+	backdrop-filter: saturate(180%) blur(15px);
+	background-color: rgba(77, 62, 87, 0.5);
+  filter: drop-shadow(rgba(21, 6, 26, 0.585) 1rem 1rem 10px);
+  transition: all 0.5s;
+}
+
+#gradient-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background: linear-gradient(to bottom, #2b0f42 0%, black 100%);
+  background-attachment: scroll;
+  z-index: 10;
+}
+
+#still-bg-gradient {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background: linear-gradient(to bottom, black 0%, black 100%);
+  background-attachment: fixed;
+}
+
+#topscroll {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background: linear-gradient(to bottom, #2b0f42 0%, #2b0f42 100%);
+  background-attachment: fixed;
+  z-index: 4;
+}
+
+.welcome-header {
+  text-align: center;
+  position: relative;
+}
+
+.ul-top {
+  list-style-type: none;
+  margin-left: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #382c40;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  position: fixed;
+  left: 10px;
+	-webkit-backdrop-filter: saturate(180%) blur(5px);
+	backdrop-filter: saturate(180%) blur(5px);
+	background-color: rgba(77, 62, 87, 0.5);
+  filter: drop-shadow(rgba(21, 6, 26, 0.585) 1rem 1rem 10px);
+  transition: all 0.5s;
+  z-index: 5;
+}
+  
+li {
+  float: left;
+}
+  
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+  
+li a:hover {
+  background-color: rgba(38, 29, 43, 0.5);
+  transition: background-color 0.5s;
+  transition: all 0.5s
+}
+
+ul:hover {
+  background-color: rgba(82, 69, 90, 0.6);
+  transition: background-color 0.5s;
+  transition: all 0.5s;
+}
+
+.typing-welcome {
+  width: 17ch;
+  animation: typing 1s steps(16), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 1px solid;
+  height: 8%;
+  margin: 0 auto;
+  animation-fill-mode: forwards;
+}
+
+.typing-aboutme {
+  width: 18ch;
+  animation: typing 1s steps(16), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 1px solid;
+  height: 8%;
+  margin: 0 auto;
+  animation-fill-mode: forwards;
+}
+
+.stop-animation {
+  animation: none;
+  border-right: 0px solid;
+}
+
+.typing h1 {
+  text-align: center;
+}
+
+  
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+      
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  30% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeInSub {
+  0% { opacity: 0; }
+  30% { opacity: 0; }
+  100% { opacity: 0.5; }
+}
+@keyframes altFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.fade-in-text { animation: fadeIn 3s; }
+.fade-in-subtext { animation: fadeInSub 3s; }
+.fade-in-img { animation: altFadeIn 2.5s; }
+  
+@media screen and (max-width: 995px) {
+  li {float: none; opacity: 1.0;}
+  ul {width: 95%; opacity: 1.0;}
+  li a {opacity: 1.0 !important;}
+  .active {opacity: 1.0 !important;}
+  .welcome-header {position: absolute; opacity: 0 !important;}
+  .description-content p {margin: 20px !important; text-align: center; font-size: 0.8rem !important;}
+  .description-content h2 {font-size: 0.9rem !important; margin-top: 24px !important;}
+  .description-content-welcome h2 {font-size: 0.9rem !important;}
+  .description-content img {width: 75% !important;}
+  .vertical-center {position: absolute; margin-top: 4%;}
+  .footer p {margin-top: -5px !important; margin-bottom: 25px;}
+  .about-description {margin-top: 10.5rem !important;}
+  .welcome-subtext {margin-top: 32.5rem !important;}
+}
+
+.welcome-subtext {
+  text-align: center;
+  position: absolute;
+  margin-top: 28rem;
+  font-size: 0.8rem;
+}
+
+.active {
+  background-color: rgba(149, 80, 202, 0.2);
+  transition: background-color 0.5s;
+}
+
+.centered-list-item {
+  display: flex;
+  align-items: center; /* Vertical centering */
+  justify-content: center;
+}
+
+.centered-list-item a {
+  width: 100%;
+}
+
+.svg-icon {
+  margin-right: 10px; /* Adjust the spacing between the icon and text */
+  vertical-align: middle;
+}
+
+.description-content p {
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 75px;
+  margin-right: 75px;
+  font-size: 1.2rem;
+}
+
+.description-content h2 {
+  text-align: center;
+  margin-top: 64px;
+  font-size: 1.5rem;
+}
+
+.description-content-welcome h2 {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 1.5rem;
+}
+
+.description-content img {
+  border-radius: 45px;
+  width: 50%;
+  height: auto;
+  margin-bottom: 32px;
+}
+
+.bdev-mesh-logo {
+  z-index: -6;
+  position: relative;
+}
+
+.center-img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%; /* Ensure the image doesn't exceed its container width */
+}
+
+.inline-hyperlink {
+  color: #9c5ec4;
+  transition: color 0.5s;
+}
+
+.inline-hyperlink:hover {
+  color: #c48ee8;
+  transition: color 0.5s;
+}
+
+.footer {
+  opacity: 0.5;
+  text-align: center;
+}
+
+.footer p {
+  margin-top: 0px;
+}
+
+.vertical-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Optional: Center vertically within the viewport height */
+}
