@@ -1,5 +1,5 @@
 html, body {
-  height: lvh;
+  height: 100lvh;
   margin: 0px;
   padding: 0px;
   }
@@ -306,7 +306,6 @@ ul:hover {
   opacity: 0.5;
   text-align: center;
   align-items: flex-end;
-  position: fixed;
 }
 
 .footer-container {
