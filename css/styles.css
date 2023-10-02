@@ -53,7 +53,7 @@ body p {
 	backdrop-filter: saturate(180%) blur(15px);
 	background-color: rgba(77, 62, 87, 0.5);
   filter: drop-shadow(rgba(21, 6, 26, 0.585) 1rem 1rem 10px);
-  transition: all 0.5s;
+  transition: background-color 0.5s;
 }
 
 #gradient-bg {
@@ -120,6 +120,7 @@ body p {
   filter: drop-shadow(rgba(21, 6, 26, 0.585) 1rem 1rem 10px);
   transition: all 0.5s;
   z-index: 5;
+  transition: background-color 0.5s;
 }
   
 li {
@@ -132,18 +133,19 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  transition: background-color 0.5s;
 }
   
-li a:hover {
-  background-color: rgba(38, 29, 43, 0.5);
-  transition: background-color 0.5s;
-  transition: all 0.5s
+.nav li a:hover {
+  background-color: rgba(196, 147, 219, 0.25);
 }
 
-ul:hover {
+.ul-top:hover {
   background-color: rgba(82, 69, 90, 0.6);
-  transition: background-color 0.5s;
-  transition: all 0.5s;
+}
+
+.ul-centered:hover {
+  background-color: rgba(82, 69, 90, 0.6);
 }
 
 .typing-welcome {
@@ -211,7 +213,8 @@ ul:hover {
   
 @media screen and (max-width: 995px) {
   li {float: none; opacity: 1.0;}
-  ul {width: 95%; opacity: 1.0;}
+  .ul-centered {width: 95% !important; opacity: 1.0;}
+  .ul-top {width: 95% !important; opacity: 1.0;}
   li a {opacity: 1.0 !important;}
   .active {opacity: 1.0 !important;}
   .welcome-header {position: absolute; opacity: 0 !important;}
