@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if(!section) {
         section = "all";
         if(query) {
-            history.replaceState({}, document.title, `/search/?query=${encodeURIComponent(query)}&section=${encodeURIComponent(section)}`);
+            history.replaceState({}, document.title, `/voyage/search/?query=${encodeURIComponent(query)}&section=${encodeURIComponent(section)}`);
         }
     }
 
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       if(query) {
-        window.location.href = `/search/?query=${encodeURIComponent(query)}&section=${encodeURIComponent(section)}`;
+        window.location.href = `/voyage/search/?query=${encodeURIComponent(query)}&section=${encodeURIComponent(section)}`;
       } else {
         console.log("no query specified.")
       }
@@ -210,8 +210,8 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
     function updateSearchSection() {
-        history.replaceState({}, document.title, `/search/?query=${encodeURIComponent(query)}&section=${encodeURIComponent(section)}`);
-        window.location.href = `/search/?query=${encodeURIComponent(query)}&section=${encodeURIComponent(section)}`;
+        history.replaceState({}, document.title, `/voyage/search/?query=${encodeURIComponent(query)}&section=${encodeURIComponent(section)}`);
+        window.location.href = `/voyage/search/?query=${encodeURIComponent(query)}&section=${encodeURIComponent(section)}`;
     }
 });
 
