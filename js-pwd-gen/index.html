@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Password Generator</title>
+</head>
+<body>
+
+    <!--<div class="nav-container">
+        <ul>
+            <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+                <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+              </svg>password-gen</a></li>
+            <li><a href="">button</a></li>
+            <li><a href="">button</a></li>
+            <li><a href="">button</a></li>
+        </ul>
+    </div>-->
+
+    <div class="container">
+
+        <h1>Password Generator</h1>
+
+        <div class="controls">
+            <label for="length">Password Length: <span id="lengthValue">16</span></label>
+            <input type="range" id="length" min="1" max="32" value="16">
+
+            <div class="switch">
+
+                <label class="switch-label">
+                    Uppercase
+                    <input type="checkbox" class="checkbox" id="uppercase" checked>
+                    <span class="switch-slider"></span>
+                </label>
+
+                <label class="switch-label">
+                    Lowercase
+                    <input type="checkbox" class="checkbox" id="lowercase" checked>
+                    <span class="switch-slider"></span>
+                </label>
+
+                <label class="switch-label">
+                    Special
+                    <input type="checkbox" class="checkbox" id="special" checked>
+                    <span class="switch-slider"></span>
+                </label>
+                
+            </div>
+        </div>
+
+        <div class="buttons">
+            <div class="genbutton">
+                <button onclick="generatePassword()" id="gen" class="genbutton">Generate Password</button>
+            </div>
+            <div class="copybutton">
+                <button onclick="copyToClipboard()" id="copy">Copy</button>
+            </div>
+        </div>
+
+        <input type="text" id="output" readonly>
+
+    </div>
+    <p class="warning hide" id="warning">Passwords less than 16 characters aren't recommended.</p>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
