@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://bonnie39.github.io/tools/trollapps-repo-maker/css/styles.css">
+    <title>TrollApps Repo Generator</title>
+</head>
+<body>
+    <div id="container">
+        <!-- Import Repo -->
+        <label for="importRepo">Import Repo from JSON:</label>
+        <!--<input type="file" id="importRepo" accept=".json">-->
+        <input type="url" id="importRepoURL" placeholder="Enter JSON URL">
+        <button onclick="importRepo()">Import Repo</button>
+
+        <!-- Repo Details -->
+        <label for="repoName">Repo Name:</label>
+        <input type="text" id="repoName" placeholder="Enter repo name">
+
+        <label for="repoSubtitle">Repo Subtitle:</label>
+        <input type="text" id="repoSubtitle" placeholder="Enter repo subtitle">
+
+        <label for="repoDescription">Repo Description:</label>
+        <textarea id="repoDescription" placeholder="Enter repo description"></textarea>
+
+        <label for="repoIconURL">Repo Icon URL:</label>
+        <input type="text" id="repoIconURL" placeholder="Enter repo icon URL">
+
+                <!-- Image Preview -->
+                <img id="previewImage" alt="Image Preview">
+
+        <label for="repoHeaderURL">Repo Header URL:</label>
+        <input type="text" id="repoHeaderURL" placeholder="Enter repo header URL">
+
+        <label for="repoWebsite">Repo Website:</label>
+        <input type="text" id="repoWebsite" placeholder="Enter repo website URL">
+
+        <label for="repoTintColor">Repo Tint Color:</label>
+        <input type="text" id="repoTintColor" placeholder="Enter repo tint color">
+
+        <!-- Apps Container -->
+        <div id="appsContainer"></div>
+
+        <!-- Add App Button -->
+        <button onclick="addApp()">+ Add App</button>
+
+        <!-- Generate Repo Button -->
+        <button onclick="generateRepo()">Generate Repo</button>
+
+        <p id="copied">JSON copied to clipboard!</p>
+    </div>
+
+    <script src="https://bonnie39.github.io/tools/trollapps-repo-maker/js/index.js"></script>
+    <script src="https://bonnie39.github.io/tools/trollapps-repo-maker/js/img.js"></script>
+</body>
+</html>
