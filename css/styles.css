@@ -337,3 +337,10 @@ li a {
   align-items: center;
   height: 100vh;
 }
+
+.header-p {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  font-size: 1.25em;
+}
