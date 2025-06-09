@@ -295,14 +295,34 @@ li a {
   max-width: 100%;
 }
 
+.center-img-portfolio {
+  display: block;
+  margin: 0 auto;
+  max-width: 35%;
+  border-radius: 25px !important;
+}
+
+@media screen and (max-width: 600px) {
+  .center-img-portfolio {
+    max-width: 90%;
+  }
+}
+
 .inline-hyperlink {
+  text-decoration: none;
   color: #9c5ec4;
   transition: color 0.5s;
 }
 
 .inline-hyperlink:hover {
+  text-decoration: underline;
   color: #c48ee8;
   transition: color 0.5s;
+}
+
+.image-description {
+  font-size: 0.9rem !important;
+  opacity: 0.8;
 }
 
 .footer {
