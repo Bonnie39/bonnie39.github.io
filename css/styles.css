@@ -364,3 +364,88 @@ li a {
   text-align: center;
   font-size: 1.25em;
 }
+
+
+
+/* CONSTRUCTION PAGE STYLES */
+
+.site-header {
+    text-align: center;
+    padding: 2rem 1rem 1.5rem;
+    font-family: system-ui, Arial, sans-serif;
+    position: relative;
+    z-index: 5;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: clamp(1.4rem, 2.2vw + 1rem, 2.5rem);
+    line-height: 1.15;
+}
+
+/* Diagonal construction tape */
+.construction-tape {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 160%;
+    height: 130px;
+    transform: translate(-50%, -50%) rotate(-18deg);
+    background: repeating-linear-gradient(
+        45deg,
+        #000000 0 55px,
+        #FFD400 55px 110px
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px -6px rgba(0,0,0,0.5), 0 0 0 2px #000 inset;
+    border: 4px solid #000;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.construction-tape::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            rgba(0,0,0,0.15) 0 8px,
+            transparent 8px 16px
+        );
+    mix-blend-mode: multiply;
+}
+
+.tape-text {
+    font-family: "Impact", "Arial Black", system-ui, sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #000;
+    text-shadow:
+        1px 1px 0 #FFD400,
+        -1px -1px 0 #FFD400,
+        -1px 1px 0 #FFD400,
+        1px -1px 0 #FFD400;
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+    animation: scrollTape 18s linear infinite;
+    will-change: transform;
+}
+
+.tape-text::after {
+    content: attr(data-dup);
+    position: absolute;
+    top: 0;
+    left: 100%;
+    white-space: inherit;
+}
+
+/* @keyframes scrollTape {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+} */
