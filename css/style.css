@@ -314,14 +314,34 @@ main {
 
 .yt-meta {
     display: flex;
-    gap: 0.75rem;
+    flex-direction: column;
+    gap: 0.35rem;
     font-size: 0.75rem;
     color: var(--text-secondary);
+}
+
+.yt-meta svg {
+    width: 13px;
+    height: 13px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.yt-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.yt-stats {
+    display: flex;
+    gap: 0.75rem;
 }
 
 .yt-stat {
     display: inline-flex;
     align-items: center;
+    gap: 0.3rem;
     white-space: nowrap;
 }
 
