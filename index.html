@@ -3,24 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BonnieDev</title>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body style="height: 100vh; overflow: hidden;">
-    <header class="site-header">
-        <h1>This page is temporarily under construction.</h1>
-    </header>
 
-    <div class="construction-tape" aria-hidden="true">
-        <div class="tape-text">
-            UNDER CONSTRUCTION • UNDER CONSTRUCTION • UNDER CONSTRUCTION • UNDER CONSTRUCTION • UNDER CONSTRUCTION • UNDER CONSTRUCTION •
-        </div>
-    </div>
+    <link rel="shortcut icon" href="../img/BonnieIcon.webp"/>
+    <link rel="apple-touch-icon" href="../img/BonnieIcon.webp"/>
+    <link rel="icon" type="image/png" sizes="180x180" href="../img/BonnieIcon.webp"/>
+    <link rel="icon" type="image/x-icon" href="https://theresonanceteam.github.io/img/BonnieIcon.webp">
+    <meta name="msapplication-TileImage" content="../img/BonnieIcon.webp"/>
+
+    <title>Bonnie Anderson</title>
+    <meta name="title" content="Bonnie Anderson" />
+    <meta name="description" content="My personal website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="webassets" />
+    <meta property="og:url" content="https://bonnie39.com" />
+    <meta property="og:title" content="Bonnie Anderson" />
+    <meta property="og:description" content="My personal website"/>
+    <meta property="og:image" content="https://bonnie39.com/img/meta.webp"/>
     
-    <footer class="footer footer-copyright">
-        <div class="footer-container">
-            <p>© Bonnie Anderson 2025</p>
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://bonnie39.com" />
+    <meta property="twitter:title" content="Bonnie Anderson" />
+    <meta property="twitter:description" content="My personal website"/>
+    <meta property="twitter:image" content="https://bonnie39.com/img/meta.webp"/>
+</head>
+<body>
+
+<!-- SVG filter for liquid glass displacement -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <filter id="liquid-glass" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+        <feImage href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" x="0" y="0" width="1" height="1" result="transparent" />
+
+        <!-- Create a gradient for the top edge -->
+        <feMorphology in="SourceAlpha" operator="erode" radius="2" result="edge-top" />
+        <feGaussianBlur in="edge-top" stdDeviation="2" result="blur-top-pre" />
+        <feOffset in="blur-top-pre" dy="-2" result="blur-top" />
+
+        <!-- Create a gradient for the bottom edge -->
+        <feMorphology in="SourceAlpha" operator="erode" radius="12" result="edge-bottom" />
+        <feGaussianBlur in="edge-bottom" stdDeviation="6" result="blur-bottom" />
+
+        <!-- Combine the top and bottom edge effects -->
+        <feMerge result="merged-edges">
+          <feMergeNode in="blur-top"/>
+          <feMergeNode in="blur-bottom"/>
+          <feMergeNode in="transparent"/>
+        </feMerge>
+
+        <!-- Apply a component transfer to ensure x-axis displacement is neutral (0.5) -->
+        <feComponentTransfer in="merged-edges" result="neutral-x">
+          <feFuncR type="discrete" tableValues="0.5" />
+        </feComponentTransfer>
+
+        <!-- Displace the source graphic using the neutral x-channel and the alpha for the y-channel -->
+        <feDisplacementMap in="SourceGraphic" in2="neutral-x" scale="26" xChannelSelector="R" yChannelSelector="A" />
+    </filter>
+</svg>
+
+<!-- Header -->
+<header>
+    <div class="glass-backdrop"></div>
+    <div class="header-inner">
+        <div class="header-intro">
+            <h1>Bonnie <span class="last-name">Anderson</span></h1>
+            <p>I’m a software developer who enjoys building cool things. In my free time, I play games with friends and create YouTube content around those experiences.</p>
         </div>
-    </footer>
+        <nav class="header-socials">
+            <a href="https://youtube.com/@Bonnie39" target="_blank" rel="noopener" aria-label="YouTube">
+                <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31.9 31.9 0 000 12a31.9 31.9 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31.9 31.9 0 0024 12a31.9 31.9 0 00-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+            </a>
+            <a href="https://x.com/dev_bonnie" target="_blank" rel="noopener" aria-label="X">
+                <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://github.com/Bonnie39" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://ko-fi.com/bonnie39" target="_blank" rel="noopener" aria-label="Ko-fi">
+                <svg viewBox="0 0 24 24"><path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311zm6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015z"/></svg>
+            </a>
+        </nav>
+    </div>
+</header>
+<div id="header-spacer"></div>
+
+<main>
+    <!-- left column -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+
+        <a class="project-card" href="https://github.com/TheResonanceTeam/TrollApps" target="_blank" rel="noopener">
+            <span class="status-dot released" title="Released"></span>
+            <h3>TrollApps</h3>
+            <p>An App Store alternative for iOS devices running TrollStore.</p>
+            <div class="project-tags">
+                <span class="tag">Swift</span>
+                <span class="tag">Objective-C</span>
+            </div>
+        </a>
+
+        <a class="project-card" href="https://github.com/TheResonanceTeam/TrollAppsTV" target="_blank" rel="noopener">
+            <span class="status-dot prerelease" title="Beta Release"></span>
+            <h3>TrollAppsTV</h3>
+            <p>TrollApps but for jailbroken Apple TVs.</p>
+            <div class="project-tags">
+                <span class="tag">Swift</span>
+                <span class="tag">Objective-C</span>
+            </div>
+        </a>
+
+        <a class="project-card" href="#">
+            <span class="status-dot unreleased" title="Unreleased"></span>
+            <h3>Aether LCE</h3>
+            <p>A port of the iconic Aether mod to Minecraft Legacy Console Edition.</p>
+            <div class="project-tags">
+                <span class="tag">C++</span>
+            </div>
+        </a>
+
+        <a class="project-card" href="https://github.com/Bonnie39/FluxerGroovy" target="_blank" rel="noopener">
+            <span class="status-dot released" title="Released"></span>
+            <h3>FluxerGroovy</h3>
+            <p>A simple music bot for Fluxer.</p>
+            <div class="project-tags">
+                <span class="tag">JavaScript</span>
+            </div>
+        </a>
+
+        <a class="project-card" href="https://github.com/WyvernChatApp" target="_blank" rel="noopener">
+            <span class="status-dot unreleased" title="Unreleased"></span>
+            <h3>Wyvern</h3>
+            <p>A self-hosted Discord alternative for friend groups and small communities.</p>
+            <div class="project-tags">
+                <span class="tag">TypeScript</span>
+            </div>
+        </a>
+
+        <a class="project-card" href="https://github.com/TeamRGBSource" target="_blank" rel="noopener">
+            <span class="status-dot unreleased" title="Unreleased"></span>
+            <h3>rgbSource</h3>
+            <p>A custom branch of the 2013 Source SDK, which has been heavily modified to support enhanced PBR materials, feature many quality-of-life improvements, and provide a more stable, enjoyable, and customizable experience.</p>
+            <div class="project-tags">
+                <span class="tag">C++</span>
+            </div>
+        </a>
+
+        <a class="project-card" href="https://bonniedev.itch.io/" target="_blank" rel="noopener">
+            <span class="status-dot released" title="Released"></span>
+            <h3>Jackrabbit Interactive</h3>
+            <p>I make indie games and publish them under the name Jackrabbit Interactive.</p>
+            <div class="project-tags">
+                <span class="tag">Unity</span>
+                <span class="tag">C#</span>
+            </div>
+        </a>
+
+        <a class="view-more" href="https://github.com/Bonnie39" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" class="view-more-icon"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>View more on GitHub &rarr;</a>
+    </section>
+
+    <!-- right column -->
+    <section id="youtube">
+        <h2 class="section-title">Videos</h2>
+
+        <div id="yt-cards"></div>
+
+        <a class="view-more" href="https://youtube.com/@Bonnie39" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" class="view-more-icon"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31.9 31.9 0 000 12a31.9 31.9 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31.9 31.9 0 0024 12a31.9 31.9 0 00-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>View more on YouTube &rarr;</a>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; Bonnie Anderson <script>document.write(new Date().getFullYear())</script></p>
+</footer>
+
+<script src="js/youtube.js"></script>
+<script>
+    (function () {
+        var header = document.querySelector('header');
+        var spacer = document.getElementById('header-spacer');
+        var scrolled = false;
+
+        function updateSpacer() {
+            spacer.style.height = header.offsetHeight + 'px';
+        }
+        updateSpacer();
+        window.addEventListener('resize', updateSpacer);
+
+        window.addEventListener('scroll', function () {
+            var s = window.scrollY > 40;
+            if (s !== scrolled) {
+                scrolled = s;
+                header.classList.toggle('scrolled', s);
+            }
+        });
+    })();
+</script>
 </body>
 </html>
