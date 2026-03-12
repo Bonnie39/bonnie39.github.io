@@ -181,10 +181,57 @@
 
 <footer>
     <p>&copy; Bonnie Anderson <script>document.write(new Date().getFullYear())</script></p>
+    <div id="theme-switcher" style="margin-top:1rem;">
+        <label for="theme-select" style="font-size:0.95em; color:var(--text-secondary); margin-right:0.5em;">Theme:</label>
+        <select id="theme-select" style="padding:0.3em 0.7em; border-radius:6px; border:1px solid var(--border); background:var(--bg-raised); color:var(--text);">
+            <option value="red">Red Dark</option>
+            <option value="dark">Full Dark</option>
+            <option value="light">Light</option>
+        </select>
+    </div>
 </footer>
 
 <script src="js/youtube.js"></script>
+
 <script>
+    (function () {
+        var style = document.createElement('style');
+        style.innerHTML = `
+            body, header, .header-inner, .glass-backdrop, .header-socials a, .project-card, .tag, .yt-card, .yt-thumb, .yt-info, .view-more, footer, #theme-select {
+                transition: background 0.4s, color 0.4s, border-color 0.4s, box-shadow 0.4s;
+            }
+        `;
+        document.head.appendChild(style);
+
+        var themeSelect = document.getElementById('theme-select');
+        var themeKey = 'bonnie39-theme';
+        var themeMap = {
+            'red': 'theme-red',
+            'dark': 'theme-dark',
+            'light': 'theme-light'
+        };
+
+        function setTheme(theme) {
+            // remove all theme classes
+            document.body.classList.remove('theme-red', 'theme-dark', 'theme-light');
+            document.body.classList.add(themeMap[theme]);
+        }
+
+        // load saved theme
+        var saved = localStorage.getItem(themeKey);
+        var initial = saved && themeMap[saved] ? saved : 'red';
+        setTheme(initial);
+        if (themeSelect) themeSelect.value = initial;
+
+        if (themeSelect) {
+            themeSelect.addEventListener('change', function (e) {
+                var val = themeSelect.value;
+                setTheme(val);
+                localStorage.setItem(themeKey, val);
+            });
+        }
+    })();
+
     (function () {
         var header = document.querySelector('header');
         var spacer = document.getElementById('header-spacer');
